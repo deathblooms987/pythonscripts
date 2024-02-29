@@ -58,12 +58,12 @@ for index, row in enumerate(worksheetData.rows):
     vehiclesData.append( {
         'make': row[0].value,
         'model': row[2].value,
-        'year': str(int(row[4].value)),
+        'year_id': int(row[4].value),
         'images': [row[5].value, row[6].value],
         'priceUAE': row[7].value,
         'priceKSA': row[8].value,
         'originCountry': row[9].value,
-        'class': row[10].value,
+        'carClass': row[10].value,
         'bodyStyles': row[11].value,
         'weight': row[12].value,
         'reviews': [row[13].value, row[14].value],
@@ -152,13 +152,8 @@ for index, item in enumerate(vehicleList):
         if modelsItem['model'] == vehiclesArray[index]['model']:
             vehiclesArray[index]['model_id'] = modelsItem['model_id']
             break
-    for yearsItem in yearsArray:
-        if yearsItem['year'] == vehiclesArray[index]['year']:
-            vehiclesArray[index]['year_id'] = yearsItem['year_id']
-            break
     del vehiclesArray[index]['make']
     del vehiclesArray[index]['model']
-    del vehiclesArray[index]['year']
     vehiclesArray[index].update({'vehicle_id': vehicle_id})
     vehicle_id += 1
 

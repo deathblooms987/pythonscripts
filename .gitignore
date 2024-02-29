@@ -2,4 +2,5 @@ venv/
 *.json
 *.txt
 *.xlsx
+!Middle-East-GCC-Car-Database-by-Teoalida-SAMPLE.xlsx
 *.csv
